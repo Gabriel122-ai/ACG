@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title> 
-    <script type="text/javascript">
-        var raiz = Math.sqrt(arg) ;
+     <script type="text/javascript">
+     function minhafuncao(arg1,arg2){
+        var soma = arg1 + arg2;
 
+        var msg = 'A soma é igual a ';
 
+        var raiz = Math.sqrt(arg);
         alert('Teste JS');
-    
+     }
 
+     function escrava(arg){
+        document.write(arg);
+     }
      function escreveDiv(texto){
         document.getElementById("minhaDiv").innerHTML = texto;
      }
 
-
-
-    </script>
+</script>
 </head>
 <body>
     <h1>Escrevendo na Div</h1>
     <button onclick="escreveDiv('<h1>Programacao web</h1>')">Escrever</button> <br><br>
+    <div id="minhaDiv"></div>
     
 </body>
 </html>
