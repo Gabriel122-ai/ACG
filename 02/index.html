@@ -5,22 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title> 
      <script type="text/javascript">
-    function calcularRaiz(){
-     consolo.log(Math.sqrt(25));
-     consolo.log(Math.sqrt(36));
-     consolo.log(Math.sqrt(49));
+    function raizQuadrada(){
+        alert(
+     "Raiz de 25 = " + (Math.sqrt(25)) +
+     "\nRaiz de 39 =" + (Math.sqrt(36)) +
+     "\nRaiz de 49 =" + (Math.sqrt(49));
+    );
     }
-     calcularRaiz()
 
-     <div id="resultado"></div>
-     <button onclick="escreveDiv()">Clique aqui</button>
+    function escreveDiv(){
+        document.getElementById("resultado1").innerHTML =
+        "Texto dentroda div";
+    }
 
+    function receberTexto(){
+        var texto =
+        document.getElementById("texto").value;
+
+        document.getElementById("resultado2").innerHTML =
+        texto;
+    }
+
+     function escreveNumero(){
+        var n = prompt("digite um numero: ");
+        var texto = "";
+
+        for (var i = 1; i <= n; i++){
+            texto += i + "<br>";
+           }
+           document.getElementById("resultado3").innerHTML =
+           texto;
+        }
+     
 </script>
 </head>
 <body>
-    <h1>Escrevendo na Div</h1>
-    <button onclick="escreveDiv('<h1>Programacao web</h1>')">Escrever</button> <br><br>
-    <div id="minhaDiv"></div>
+    <button onclick="raizQuadrada()">Excercio 1</button>
+    <br><br>
+    <button onclick="escreveDiv()">Excercio 2</button>
+    <div id="resultado1"></div>
     
+    <br>
+    <input type="text" id="texto">
+    <button onclick="receberTexto()">Excercio 3</button>
+    <div id="resultado2"></div>
+
+    <br>
+
+    <button onclick="escreveNumero()">Desafio</button>
+    <div id="resultado3"></div>
 </body>
 </html>
