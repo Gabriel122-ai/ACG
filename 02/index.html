@@ -1,60 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title> 
+    <title>JavaScript</title>
     <script type="text/javascript">
-    function raizQuadrada(){
-        alert(
-     "Raiz de 25 = " + (Math.sqrt(25)) +
-     "\nRaiz de 39 =" + (Math.sqrt(36)) +
-     "\nRaiz de 49 =" + (Math.sqrt(49));
-    );
+
+
+function calcularRaiz(arg){
+    var raiz = Math.sqrt(arg);
+    alert("A raiz quadrada de " + arg + " é " + raiz);
+}
+
+
+function escreveDiv(texto){
+    document.getElementById("minhaDiv2").innerHTML = texto;
+
+}
+
+function escreveDiv(texto){
+    texto = prompt('Digite um texto qualquer');
+    document.getElementById("minhaDiv2").innerHTML = texto;
+
+}
+
+
+function escreverNumeros(){
+    left n prompt('Digite um texto qualquer');
+    n = parseInt(n);
+    let divResultado = document.getElementById("resultadoDesafio");
+    divResultado.innerHTML = "";
+    if (isNaN(n) || n < 1){
+    divResultado.innerHTML="Por favor, insira um numero valido maior ou igual a 1.";
+    return;
+    }
+    
+    for (left i = 1; 1 <= n; i++) {
+        divResultado.innerHTML += i + " ";
     }
 
-    function escreveDiv(){
-        document.getElementById("resultado1").innerHTML =
-        "Texto dentroda div";
-    }
+}
 
-    function receberTexto(){
-        var texto =
-        document.getElementById("texto").value;
 
-        document.getElementById("resultado2").innerHTML =
-        texto;
-    }
 
-     function escreveNumero(){
-        var n = prompt("digite um numero: ");
-        var texto = "";
 
-        for (var i = 1; i <= n; i++){
-            texto += i + "<br>";
-           }
-           document.getElementById("resultado3").innerHTML =
-           texto;
-        }
-     
-
-</script>   
+    </script>
 </head>
 <body>
-    <button onclick="raizQuadrada()">Excercio 1</button>
-    <br><br>
-    <button onclick="escreveDiv()">Excercio 2</button>
-    <div id="resultado1"></div>
-    
-    <br>
-    <input type="text" id="texto">
-    <button onclick="receberTexto()">Excercio 3</button>
-    <div id="resultado2"></div>
+<h1>Raiz Quadrada</h1>
 
-    <br>
+<button onclick="calcularRaiz(25)">Raiz de 25</button>
+<button onclick="calcularRaiz(36)">Raiz de 36</button>
+<button onclick="calcularRaiz(49)">Raiz de 49</button>  <br><br>
 
-    <button onclick="escreveNumero()">Desafio</button>
-    <div id="resultado3"></div>
+
+
+<h1>Escrevendo na Div</h1>
+<div id="minhaDiv2"></div>
+<button onclick="escreveDiv('<h1> Programaçao Web <h1/>')">Escrever</button> <br><br>
+
+
+
+<hr>
+
+<h1>Escrevendo na Texto Dinamico</h1>
+<div id="minhaDiv2"></div>
+<button onclick="escreverDiv2()">Escrever</button> <br><br>
+<hr>
+<h1>Desafio</h1>
+<button onclick="escreverNumeros">Escrever</button>
+<hr>
+<div id="resultadoDesafio"></div>
 
 
 </body>
