@@ -23,12 +23,21 @@
                }
      }
 
+     function posicaoLinguaguens(){
+        var indice = prompt('Qual a posicaoda lista deseja consultar?');
+        alert (linguaguens[indice]);
+     }
+
+
     </script>
 </head>
 <body>
     <h1> Array de Linguaguens</h1>
 
     <button onclick="mostrarListaLinguaguens()">Criar Array</button> <br><br>
+    <div id="minhaDiv"></div>
+
+    <button onclick="posicaoLinguaguens()">Posição no Array</button>
     <div id="minhaDiv"></div>
     
 </body>
