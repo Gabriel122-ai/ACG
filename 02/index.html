@@ -2,6 +2,8 @@
 <head>
     <title>JavaScript</title>
     <script type="text/javascript">
+
+
 function calcularRaiz(arg){
     var raiz = Math.sqrt(arg);
     alert("A raiz quadrada de " + arg + " é " + raiz);
@@ -21,7 +23,7 @@ function escreveDiv(texto){
 
 
 function escreverNumeros(){
-    left n prompt('Digite um texto qualquer');
+    let n = prompt('Digite um texto qualquer');
     n = parseInt(n);
     let divResultado = document.getElementById("resultadoDesafio");
     divResultado.innerHTML = "";
@@ -30,7 +32,7 @@ function escreverNumeros(){
     return;
     }
     
-    for (left i = 1; 1 <= n; i++) {
+    for (let i = 1; 1 <= n; i++) {
         divResultado.innerHTML += i + " ";
     }
 
