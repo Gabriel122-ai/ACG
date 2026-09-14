@@ -9,12 +9,13 @@
 
         function mostraLista(){
             const container = document.getElementById('minhaDiv');
-            container.innerHTML = ''; //limpa o contéudo ataual do container
+            container.innerHTML = ''; 
 
-            for (var i = 0; i < pilhaPessoas.length; i ++) {// mostra os elementos  
+            for (var i = 0; i < pilhaPessoas.length; i ++) {
                 var tag = '<h5>' + i + '-' + pilhaPessoas[i] + '</h5>';
             container.innerHTML += tag;
         }
+    }
         function adicionar(){
             var nome = prompt('Qual o nome da pessoa?');
             pilhaPessoas.push(nome);
