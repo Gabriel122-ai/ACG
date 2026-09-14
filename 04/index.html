@@ -33,7 +33,17 @@
             // se tudo certo , mostra o nome
             alert('Na posição' + indice + 'está: ' + pilhaPessoas[indice] );
         }
-        // FunÇão para remover a ultima pessoa 
+        function remover(){
+            if (pilhaPessoas.length == 0) {
+                alert('A pilha esta vazia!');
+            } else{
+        Let removido = pilhaPessoas.pop();
+        alert ('Removido: ' + removido );
+        mostrarLista();
+        }
+        function limparLista(){
+            pilhaPessoas = [];
+            mostrarLista();
         }
     </script>
 </head>
