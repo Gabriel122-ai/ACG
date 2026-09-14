@@ -22,22 +22,20 @@
             mostraLista();
         }
         function posicao() {
-            //pede o indice 
+           
             var indice = prompt('Qual a posição da lista deseja consultar ?');
-            // converte para número
             indice = Number(indice);
-            // valida se o indice esta dentro do intervalo
             if (indice <0 || indice >= pilhaPessoas.length) {
                 alert ('Posição invalida !');
                 return;
             }
-            // se tudo certo , mostra o nome
             alert('Na posição' + indice + 'está: ' + pilhaPessoas[indice] );
         }
         function remover(){
             if (pilhaPessoas.length == 0) {
                 alert('A pilha esta vazia!');
             } else{
+            }
     let removido = pilhaPessoas.pop();
         alert ('Removido: ' + removido );
         mostrarLista();
@@ -58,5 +56,5 @@
     <button onclick="limparLista()">Limpar</button>
     <div id="minhadiv"></div>
     <hr>
-</body>
+</body> 
 </html>
