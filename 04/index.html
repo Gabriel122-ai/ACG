@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        Let pilhaPessoas = Array();
+
+        function mostraLista(){
+            const container = document.getElementById('minhaDiv');
+            container.innerHTML = ''; //limpa o contéudo ataual do container
+
+            for (var i = 0; i < pilhaPessoas.length; i ++) {// mostra os elementos  
+                var tag = '<h5>' + i + '-' + pilhaPessoas[i] + '</h5>';
+            container.innerHTML += tag;
+        }
+        function adicionar(){
+            var nome = prompt('Qual o nome da pessoa?');
+            pilhaPessoas.push(nome);
+            mostraLista();
+        }
+        function posicao() {
+            //pede o indice 
+            var 
+        }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
