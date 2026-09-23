@@ -24,12 +24,11 @@
 	}
 
     function adicionar() {
-	  // pega os valores digitados nos inputs
+	
   	  const livro = document.getElementById('livro').value;
 
       pilhaLivros.push({ nome, contato });
 
-      // limpa os campos e atualiza a lista
 	  limparCampos();
       mostrarLista();
     }
@@ -68,12 +67,12 @@
     }
 
     function inserirLivro() {
-      const livro = prompt('Digite o nome do livro':)
+      const livro = prompt('Digite o nome do livro:')
       const indice = Number(
         prompt('Qual posiçao deseja inserir o livro?')
       )
       if (indice < 0 || indice > pilhaLivros.length) {
-        alert('Posiçao inválida!'):return;
+        alert('Posiçao inválida!');return;
 
       }
       pilhaLivros.splice(indice, 0, livro);
