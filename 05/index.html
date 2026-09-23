@@ -5,101 +5,116 @@
   <title>Lista de Livros</title>
 
   <script>
-
-    let pilhaLivros = [];
+    
+    let pilhadeLivros = [];
 
     function mostrarLista() {
       const container = document.getElementById('minhaDiv');
       container.innerHTML = ''; 
 
-      for (let i = 0; i < pilhaLivros.length; i++) {
-        const Livro = pilhaLivros[i];
-        const tag = '<h5>' + i + ' - titulo: ' + livro.titulo + ' | autor: '+ livro.autor +' </h5>';
+      for (let i = 0; i < pilhadeLivros.length; i++) {
+        const livro = pilhadeLivros[i];
+        const tag = '<h5>' + i + '- titulo: ' + livro.titulo + ' | autor: '+ livro.autor + '</h5>';
         container.innerHTML += tag;
       }
     }
 	
-	function limparCampos() {
+	function limpaCampos() {
 	  document.getElementById('titulo').value = '';
-    document.getElementById('autor').value = '';
+      document.getElementById('autor').value = '';
 	}
 
     function adicionar() {
-	
+	  // pega os valores digitados nos inputs
   	  const titulo = document.getElementById('titulo').value;
-      const autor = document.getElementById('autor').value = '';
+      const autor = document.getElementById('autor').value;
 
-      pilhaLivros.push({ titulo, autor });
+      pilhadeLivros.push({ titulo, autor });
 
-
-	    limparCampos();
+      // limpa os campos e atualiza a lista
+	  limpaCampos();
       mostrarLista();
     }
 
     function posicao() {
       const indice = Number(prompt('Qual posição da lista deseja consultar?'));
 
-      if (indice < 0 || indice >= pilhaLivros.length) {
+      if (indice < 0 || indice >= pilhadeLivros.length) {
         alert('Posição inválida!');
         return;
       }
 
-      const Livro = pilhaLivros[indice];
-      alert('Na posição ' + indice + ' está o titulo: ' + pessoa.titulo + ' - autor: ' + livro.autor);
+      const livro = pilhadeLivros[indice];
+      alert('Na posição ' + indice + ' está: titulo: ' + livro.titulo + ' - autor: ' + livro.autor);
     }
 
     function limparLista() {
-      pilhaLivros = [];
+      pilhadeLivros = [];
       mostrarLista();
     }
 
     function remover() {
-      if (pilhaLivros.length === 0) {
+      if (pilhadeLivros.length === 0) {
         alert('A pilha está vazia!');
       } else {
-        const removido = pilhaLivros.pop();
+        const removido = pilhadeLivros.pop();
         alert('Removido: ' + removido.titulo + ' - ' + removido.autor);
         mostrarLista();
       }
     }
 
     function inverterPilha() {
-      pilhaLivros.reverse();
+      pilhadeLivros.reverse();
       mostrarLista();
     }
+
+
+    let listaDeLivros = ["O Senhor dos Anéis", "1984", "O Pequeno Príncipe", "Dom Casmurro"];
+
+function inserirLivroPorPosicao() {
   
-
-    let listadeLivros = ["O Senhor dos Aneis", "1984", "O pequeno Principe", "Dom Casmurro"];
-
-    function inserirLivroPorPosicao() {
-
-        let novoLivro = prompt("Digite a posicao onde deseja inserir:");
-
-        
+    let novoLivro = prompt("Digite o nome do livro que deseja inserir:");
+    
+    
+    if (!novoLivro) {
+        console.log("Inserção cancelada.");
+        return;
     }
-    function inserirLivro() {
-      const livro = prompt('Digite o nome do livro:')
-      const indice = Number(
-        prompt('Qual posiçao deseja inserir o livro?')
-      )
-      if (indice < 0 || indice > pilhaLivros.length) {
-        alert('Posiçao inválida!');return;
 
-      }
-      pilhaLivros.splice(indice, 0, livro);
+   
+    let posicaoInput = prompt(Digite a posição onde deseja inserir (0 a ${listaDeLivros.length}):);
+    let posicao = parseInt(posicaoInput);
 
-      mostrarLista();
+   
+    if (isNaN(posicao) || posicao < 0 || posicao > listaDeLivros.length) {
+        console.log("Posição inválida! O livro não foi inserido.");
+        return;
     }
+
+    
+    listaDeLivros.splice(posicao, 0, novoLivro);
+
+   
+    console.log("--- Lista de Livros Atualizada ---");
+    listaDeLivros.forEach((livro, index) => {
+        console.log(${index}: ${livro});
+    });
+}
+
   </script>
 </head>
 
 <body>
-  <h1>Lista de livros</h1>
+  <h1>Lista de Pessoas</h1>
 
-	<label>Livro:</label>
-	<input type="text" id="Livro" placeholder="Digite o nome do livro">
-  
-  <br><br>
+	<label>Titulo:</label>
+	<input type="text" id="titulo" placeholder="Digite o titulo"> 
+
+	<label>Autor:</label>
+	<input type="text" id="autor" placeholder="Digite o autor">
+
+    <label>Ano:</label>
+	<input type="text" id="ano" placeholder="Digite o ano">
 
 	<button onclick="adicionar()">Adicionar</button>
 	
@@ -110,7 +125,6 @@
     <button onclick="remover()">Remover Último</button>
     <button onclick="limparLista()">Limpar Lista</button>
     <button onclick="inverterPilha()">Inverter</button>
-    <button onclick="inserirLivro()">inserirLivro</button>
 
     <br><br>
   
