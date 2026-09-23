@@ -5,8 +5,6 @@
   <title>Lista de Livros</title>
 
   <script>
-
-    
     let pilhaLivros = [];
 
     function mostrarLista() {
@@ -20,20 +18,19 @@
       }
     }
 	
-	function limpaCampos() {
-	  document.getElementById('nome').value = '';
-      document.getElementById('contato').value = '';
+	function limparCampos() {
+	  document.getElementById('livro').value = '';
+
 	}
 
     function adicionar() {
 	  // pega os valores digitados nos inputs
-  	  const nome = document.getElementById('nome').value;
-      const contato = document.getElementById('contato').value;
+  	  const nome = document.getElementById('livro').value;
 
-      pilhaPessoas.push({ nome, contato });
+      pilhaLivros.push({ nome, contato });
 
       // limpa os campos e atualiza a lista
-	  limpaCampos();
+	  limparCampos();
       mostrarLista();
     }
 
@@ -66,7 +63,7 @@
 
     function inverterPilha() {
       pilhaLivros.splice(indice, 0, livro);
-      
+
       mostrarLista();
     }
   </script>
