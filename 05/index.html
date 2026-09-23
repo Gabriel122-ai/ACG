@@ -65,20 +65,20 @@
     }
 
     function inverterPilha() {
-      pilhaPessoas.reverse();
+      pilhaLivros.splice(indice, 0, livro);
+      
       mostrarLista();
     }
   </script>
 </head>
 
 <body>
-  <h1>Lista de Pessoas</h1>
+  <h1>Lista de livros</h1>
 
 	<label>Nome:</label>
-	<input type="text" id="nome" placeholder="Digite o nome"> 
-
-	<label>Contato:</label>
-	<input type="text" id="contato" placeholder="Digite o contato">
+	<input type="text" id="Livro" placeholder="Digite o nome do livro">
+  
+  <br><br>
 
 	<button onclick="adicionar()">Adicionar</button>
 	
