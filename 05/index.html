@@ -25,7 +25,7 @@
 
     function adicionar() {
 	  // pega os valores digitados nos inputs
-  	  const nome = document.getElementById('livro').value;
+  	  const livro = document.getElementById('livro').value;
 
       pilhaLivros.push({ nome, contato });
 
@@ -37,31 +37,45 @@
     function posicao() {
       const indice = Number(prompt('Qual posição da lista deseja consultar?'));
 
-      if (indice < 0 || indice >= pilhaPessoas.length) {
+      if (indice < 0 || indice >= pilhaLivros.length) {
         alert('Posição inválida!');
         return;
       }
 
       const Livro = pilhaLivros[indice];
-      alert('Na posição ' + indice + ' está: Nome: ' + pessoa.nome + ' - Contato: ' + pessoa.contato);
+      alert('Na posição ' + indice + ' está o livro: ' + livro);
     }
 
     function limparLista() {
-      pilhaPessoas = [];
+      pilhaLivros = [];
       mostrarLista();
     }
 
     function remover() {
-      if (pilhaPessoas.length === 0) {
+      if (pilhaLivros.length === 0) {
         alert('A pilha está vazia!');
       } else {
-        const removido = pilhaPessoas.pop();
-        alert('Removido: ' + removido.nome + ' - ' + removido.contato);
+        const removido = pilhaLivros.pop();
+        alert('Removido: ' + removido);
+
         mostrarLista();
       }
     }
 
     function inverterPilha() {
+      pilhaLivros.reverse();
+      mostrarLista();
+    }
+
+    function inserirLivro() {
+      const livro = prompt('Digite o nome do livro':)
+      const indice = Number(
+        prompt('Qual posiçao deseja inserir o livro?')
+      )
+      if (indice < 0 || indice > pilhaLivros.length) {
+        alert('Posiçao inválida!'):return;
+
+      }
       pilhaLivros.splice(indice, 0, livro);
 
       mostrarLista();
@@ -72,7 +86,7 @@
 <body>
   <h1>Lista de livros</h1>
 
-	<label>Nome:</label>
+	<label>Livro:</label>
 	<input type="text" id="Livro" placeholder="Digite o nome do livro">
   
   <br><br>
