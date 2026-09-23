@@ -5,6 +5,7 @@
   <title>Lista de Livros</title>
 
   <script>
+
     let pilhaLivros = [];
 
     function mostrarLista() {
@@ -13,23 +14,25 @@
 
       for (let i = 0; i < pilhaLivros.length; i++) {
         const Livro = pilhaLivros[i];
-        const tag = '<h5>' + i + ' - Livro: ' + Livro +  '</h5>';
+        const tag = '<h5>' + i + ' - titulo: ' + livro.titulo + ' | autor: '+ livro.autor +' </h5>';
         container.innerHTML += tag;
       }
     }
 	
 	function limparCampos() {
-	  document.getElementById('livro').value = '';
-
+	  document.getElementById('titulo').value = '';
+    document.getElementById('autor').value = '';
 	}
 
     function adicionar() {
 	
-  	  const livro = document.getElementById('livro').value;
+  	  const titulo = document.getElementById('titulo').value;
+      const autor = document.getElementById('autor').value = '';
 
-      pilhaLivros.push({ nome, contato });
+      pilhaLivros.push({ titulo, autor });
 
-	  limparCampos();
+
+	    limparCampos();
       mostrarLista();
     }
 
@@ -42,7 +45,7 @@
       }
 
       const Livro = pilhaLivros[indice];
-      alert('Na posição ' + indice + ' está o livro: ' + livro);
+      alert('Na posição ' + indice + ' está o titulo: ' + pessoa.titulo + ' - autor: ' + livro.autor);
     }
 
     function limparLista() {
@@ -55,8 +58,7 @@
         alert('A pilha está vazia!');
       } else {
         const removido = pilhaLivros.pop();
-        alert('Removido: ' + removido);
-
+        alert('Removido: ' + removido.titulo + ' - ' + removido.autor);
         mostrarLista();
       }
     }
